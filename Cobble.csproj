@@ -1,0 +1,85 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Cobble</RootNamespace>
+    <AssemblyName>Cobble</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBB3DB0D-657E-494E-956F-C6CEFF76566B}</ProjectGuid>
+    <StartWorkingDirectory>..\..\..\Games\supertux-svn\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tile.cs" />
+    <Compile Include="Tilemap.cs" />
+    <Compile Include="TileRepository.cs" />
+    <Compile Include="TileSet.cs" />
+    <Compile Include="Sector.cs" />
+    <Compile Include="Path.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="LispWriter.cs" />
+    <Compile Include="Lexer.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Background.cs" />
+    <Compile Include="AboutDialog.cs" />
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="LevelPropertiesForm.cs" />
+    <Compile Include="LevelPropertiesForm.Designer.cs">
+      <DependentUpon>LevelPropertiesForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LevelPropertiesForm.resx">
+      <DependentUpon>LevelPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="LoadingScreenForm.cs" />
+    <Compile Include="LoadingScreenForm.Designer.cs">
+      <DependentUpon>LoadingScreenForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoadingScreenForm.resx">
+      <DependentUpon>LoadingScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="SectorResizeDialog.cs" />
+    <Compile Include="SectorResizeDialog.Designer.cs">
+      <DependentUpon>SectorResizeDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SectorResizeDialog.resx">
+      <DependentUpon>SectorResizeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

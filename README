@@ -1,0 +1,9 @@
+Cobble is a simple SuperTux level editor designed to do quick drafts of
+version-2 levels on Windows. To build it, get SharpDevelop, open Cobble.sln
+and click Build.
+
+The editor expects to be run with the current working directory to the
+SuperTux base directory, so either set the CWD in the Debug Options or
+copy it there.
+
+Cobble is distributed under the GPL.
