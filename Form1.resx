@@ -153,6 +153,15 @@
         4c9YpOZuAMaH9+gZi6VyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnModeBrushes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAIJJREFUOE/tkt0N
+        wCAIhB3AudyGMZyjo1KPgrH+t+ljTYgxch8H6twXK4TAs0g1eFoH4sP7HCmby3gEqMU4GyBRGatxYw6y
+        GInmoiNqQADUAklSyFYLkqzVxOdlljnG3MJwkCMHRPQCoE4ghnXbV9/FbN72CrJi9O9/SDuX3VfZnvgJ
+        AzbN5YvbhB8AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnModeObjAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -174,5 +183,11 @@
   </metadata>
   <metadata name="dgSaveLevel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>581, 17</value>
+  </metadata>
+  <metadata name="dgOpenBrush.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>706, 17</value>
+  </metadata>
+  <metadata name="dgSaveBrush.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>851, 17</value>
   </metadata>
 </root>

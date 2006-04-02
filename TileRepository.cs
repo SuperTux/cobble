@@ -26,11 +26,14 @@ using System.IO;
 using System.Collections;
 
 namespace Cobble {
-    class TileRepository {
+    public class TileRepository {
+        public Dictionary<int, bool> isSolid = new Dictionary<int, bool>();
         private Dictionary<int, Image> tileRepository = new Dictionary<int, Image>();
         private TileSet tileset;
 
         public TileRepository(string filename) {
+            isSolid[0] = false;
+
             LoadingScreenForm loadingScreen = new LoadingScreenForm();
             loadingScreen.setSubject("tileset");
             loadingScreen.setMax(100);
@@ -114,6 +117,7 @@ namespace Cobble {
             Graphics gr = Graphics.FromImage(dstImg);
             gr.DrawImage(srcImg, new Rectangle(0, 0, 32, 32), srcRect, GraphicsUnit.Pixel);
             tileRepository[tile.ID] = dstImg;
+            isSolid[tile.ID] = tile.Solid;
         }
 
     }

@@ -46,8 +46,9 @@ namespace Cobble {
         Rectangle currentSelection = new Rectangle(0, 0, 0, 0);
         Rectangle currentFloatingTilemapPos = new Rectangle(0, 0, 0, 0);
         int[,] currentFloatingTilemap = null;
+        Brush currentBrush = null;
 
-        enum CanvasAction { none, drawingTiles, selecting, movingFloatingTilemap, movingObject };
+        enum CanvasAction { none, drawingTiles, selecting, movingFloatingTilemap, movingObject, drawingBrush };
         CanvasAction currentCanvasAction = CanvasAction.none;
         Point canvasActionStart;
 
@@ -62,6 +63,7 @@ namespace Cobble {
             }
 
             tileRepository = new TileRepository("data\\images\\tiles.strf");
+            currentBrush = new Brush(tileRepository);
             foreach (TileGroup tileGroup in tileRepository.getTileGroups()) {
                 cbTilegroup.Items.Add(tileGroup);
             }
@@ -238,6 +240,10 @@ namespace Cobble {
                     pbCanvas.Invalidate();
                 }
             }
+            if ((e.Button == MouseButtons.Left) && (tcToolSettings.SelectedTab == tpBrushes)) {
+                currentCanvasAction = CanvasAction.drawingBrush;
+            }
+
 
             canvasActionStart.X = e.X;
             canvasActionStart.Y = e.Y;
@@ -287,6 +293,25 @@ namespace Cobble {
                     pbCanvas.Invalidate();
                 }
             }
+            if (currentCanvasAction == CanvasAction.drawingBrush) {
+                if (ModifierKeys == Keys.Shift) {
+                    if (currentBrush != null) currentBrush.erase(currentTilemap, tx, ty);
+                } else if (ModifierKeys == Keys.Control) {
+                    if (currentBrush != null) {
+                        currentBrush.learn(currentTilemap, tx, ty);
+                        laBrushSize.Text = currentBrush.Length + " Patterns";
+                    }
+                } else if (ModifierKeys == (Keys.Control | Keys.Shift)) {
+                    if (currentBrush != null) {
+                        currentBrush.forget(currentTilemap, tx, ty);
+                        laBrushSize.Text = currentBrush.Length + " Patterns";
+                    }
+                } else {
+                    if (currentBrush != null) currentBrush.draw(currentTilemap, tx, ty);
+                }
+                pbCanvas.Invalidate(new Rectangle((tx - 1) * 32, (ty - 1) * 32, 32 * 3, 32 * 3));
+            }
+
 
         }
 
@@ -510,6 +535,7 @@ namespace Cobble {
             btnModeTileMove.Checked = true;
             btnModeObjAdd.Checked = false;
             btnModeObjMove.Checked = false;
+            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpTileManip;
             slQuickHelp.Text = "LMB-drag to select and move tiles";
         }
@@ -519,6 +545,7 @@ namespace Cobble {
             btnModeTileMove.Checked = false;
             btnModeObjAdd.Checked = true;
             btnModeObjMove.Checked = false;
+            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpObjects;
             slQuickHelp.Text = "LMB adds selected object";
         }
@@ -528,6 +555,7 @@ namespace Cobble {
             btnModeTileMove.Checked = false;
             btnModeObjAdd.Checked = false;
             btnModeObjMove.Checked = true;
+            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpGameObjectManip;
             slQuickHelp.Text = "LMB-drag to move objects, Shift+LMB to delete objects";
         }
@@ -535,6 +563,44 @@ namespace Cobble {
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             AboutDialog abd = new AboutDialog();
             abd.ShowDialog();
+        }
+
+        private void btnModeBrushes_Click(object sender, EventArgs e) {
+            btnModeTileAdd.Checked = false;
+            btnModeTileMove.Checked = false;
+            btnModeObjAdd.Checked = false;
+            btnModeObjMove.Checked = false;
+            btnModeBrushes.Checked = true;
+            tcToolSettings.SelectedTab = tpBrushes;
+            slQuickHelp.Text = "LMB to draw with loaded brush, Shift+LMB to delete tiles, Ctrl+LMB to learn pattern, Ctrl+Shift+LMB to forget pattern";
+        }
+
+        private void btnLoadBrush_Click(object sender, EventArgs e) {
+            if (dgOpenBrush.ShowDialog() == DialogResult.OK) {
+                currentBrush = Brush.loadFromFile(tileRepository, dgOpenBrush.FileName);
+                laBrushSize.Text = currentBrush.Length + " Patterns";
+            }
+        }
+
+        private void btnSaveBrush_Click(object sender, EventArgs e) {
+            if (currentBrush == null) return;
+            if (dgSaveBrush.ShowDialog() == DialogResult.OK) {
+                currentBrush.saveToFile(dgSaveBrush.FileName);
+                laBrushSize.Text = currentBrush.Length + " Patterns";
+            }
+
+        }
+
+        private void btnNewBrush_Click(object sender, EventArgs e) {
+            currentBrush = new Brush(tileRepository);
+            laBrushSize.Text = currentBrush.Length + " Patterns";
+        }
+
+        private void btnBrushLearnTM_Click(object sender, EventArgs e) {
+            if (currentBrush == null) return;
+            if (currentTilemap == null) return;
+            currentBrush.learn(currentTilemap);
+            laBrushSize.Text = currentBrush.Length + " Patterns";
         }
     }
 }

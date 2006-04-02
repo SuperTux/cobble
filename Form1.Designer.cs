@@ -64,6 +64,12 @@ namespace Cobble {
             this.btnDuplicateSelection = new System.Windows.Forms.Button();
             this.tpObjects = new System.Windows.Forms.TabPage();
             this.lbGameObjects = new System.Windows.Forms.ListBox();
+            this.tpBrushes = new System.Windows.Forms.TabPage();
+            this.btnBrushLearnTM = new System.Windows.Forms.Button();
+            this.laBrushSize = new System.Windows.Forms.Label();
+            this.btnNewBrush = new System.Windows.Forms.Button();
+            this.btnSaveBrush = new System.Windows.Forms.Button();
+            this.btnLoadBrush = new System.Windows.Forms.Button();
             this.tpGameObjectManip = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -74,8 +80,11 @@ namespace Cobble {
             this.btnModeTileMove = new System.Windows.Forms.ToolStripButton();
             this.btnModeObjAdd = new System.Windows.Forms.ToolStripButton();
             this.btnModeObjMove = new System.Windows.Forms.ToolStripButton();
+            this.btnModeBrushes = new System.Windows.Forms.ToolStripButton();
             this.dgOpenLevel = new System.Windows.Forms.OpenFileDialog();
             this.dgSaveLevel = new System.Windows.Forms.SaveFileDialog();
+            this.dgOpenBrush = new System.Windows.Forms.OpenFileDialog();
+            this.dgSaveBrush = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.splitContainerMain.Panel1.SuspendLayout();
@@ -93,6 +102,7 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.pbTiles)).BeginInit();
             this.tpTileManip.SuspendLayout();
             this.tpObjects.SuspendLayout();
+            this.tpBrushes.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -340,6 +350,7 @@ namespace Cobble {
             // 
             this.tcToolSettings.Controls.Add(this.tpTiles);
             this.tcToolSettings.Controls.Add(this.tpTileManip);
+            this.tcToolSettings.Controls.Add(this.tpBrushes);
             this.tcToolSettings.Controls.Add(this.tpObjects);
             this.tcToolSettings.Controls.Add(this.tpGameObjectManip);
             this.tcToolSettings.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -477,6 +488,69 @@ namespace Cobble {
             this.lbGameObjects.Size = new System.Drawing.Size(151, 394);
             this.lbGameObjects.TabIndex = 0;
             // 
+            // tpBrushes
+            // 
+            this.tpBrushes.Controls.Add(this.btnBrushLearnTM);
+            this.tpBrushes.Controls.Add(this.laBrushSize);
+            this.tpBrushes.Controls.Add(this.btnNewBrush);
+            this.tpBrushes.Controls.Add(this.btnSaveBrush);
+            this.tpBrushes.Controls.Add(this.btnLoadBrush);
+            this.tpBrushes.Location = new System.Drawing.Point(4, 23);
+            this.tpBrushes.Name = "tpBrushes";
+            this.tpBrushes.Size = new System.Drawing.Size(157, 406);
+            this.tpBrushes.TabIndex = 4;
+            this.tpBrushes.Text = "BR";
+            this.tpBrushes.UseVisualStyleBackColor = true;
+            // 
+            // btnBrushLearnTM
+            // 
+            this.btnBrushLearnTM.Location = new System.Drawing.Point(22, 119);
+            this.btnBrushLearnTM.Name = "btnBrushLearnTM";
+            this.btnBrushLearnTM.Size = new System.Drawing.Size(75, 23);
+            this.btnBrushLearnTM.TabIndex = 4;
+            this.btnBrushLearnTM.Text = "learn all";
+            this.btnBrushLearnTM.UseVisualStyleBackColor = true;
+            this.btnBrushLearnTM.Click += new System.EventHandler(this.btnBrushLearnTM_Click);
+            // 
+            // laBrushSize
+            // 
+            this.laBrushSize.AutoSize = true;
+            this.laBrushSize.Location = new System.Drawing.Point(32, 191);
+            this.laBrushSize.Name = "laBrushSize";
+            this.laBrushSize.Size = new System.Drawing.Size(54, 13);
+            this.laBrushSize.TabIndex = 3;
+            this.laBrushSize.Text = "0 patterns";
+            // 
+            // btnNewBrush
+            // 
+            this.btnNewBrush.Location = new System.Drawing.Point(22, 90);
+            this.btnNewBrush.Name = "btnNewBrush";
+            this.btnNewBrush.Size = new System.Drawing.Size(75, 23);
+            this.btnNewBrush.TabIndex = 2;
+            this.btnNewBrush.Text = "new";
+            this.btnNewBrush.UseVisualStyleBackColor = true;
+            this.btnNewBrush.Click += new System.EventHandler(this.btnNewBrush_Click);
+            // 
+            // btnSaveBrush
+            // 
+            this.btnSaveBrush.Location = new System.Drawing.Point(22, 61);
+            this.btnSaveBrush.Name = "btnSaveBrush";
+            this.btnSaveBrush.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveBrush.TabIndex = 1;
+            this.btnSaveBrush.Text = "save...";
+            this.btnSaveBrush.UseVisualStyleBackColor = true;
+            this.btnSaveBrush.Click += new System.EventHandler(this.btnSaveBrush_Click);
+            // 
+            // btnLoadBrush
+            // 
+            this.btnLoadBrush.Location = new System.Drawing.Point(22, 32);
+            this.btnLoadBrush.Name = "btnLoadBrush";
+            this.btnLoadBrush.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadBrush.TabIndex = 0;
+            this.btnLoadBrush.Text = "load...";
+            this.btnLoadBrush.UseVisualStyleBackColor = true;
+            this.btnLoadBrush.Click += new System.EventHandler(this.btnLoadBrush_Click);
+            // 
             // tpGameObjectManip
             // 
             this.tpGameObjectManip.Location = new System.Drawing.Point(4, 23);
@@ -495,6 +569,7 @@ namespace Cobble {
             this.toolStripLabel2,
             this.btnModeTileAdd,
             this.btnModeTileMove,
+            this.btnModeBrushes,
             this.btnModeObjAdd,
             this.btnModeObjMove});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -567,6 +642,16 @@ namespace Cobble {
             this.btnModeObjMove.Text = "Manipulate Objects";
             this.btnModeObjMove.Click += new System.EventHandler(this.btnModeObjMove_Click);
             // 
+            // btnModeBrushes
+            // 
+            this.btnModeBrushes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModeBrushes.Image = ((System.Drawing.Image)(resources.GetObject("btnModeBrushes.Image")));
+            this.btnModeBrushes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModeBrushes.Name = "btnModeBrushes";
+            this.btnModeBrushes.Size = new System.Drawing.Size(23, 22);
+            this.btnModeBrushes.Text = "Brushes";
+            this.btnModeBrushes.Click += new System.EventHandler(this.btnModeBrushes_Click);
+            // 
             // dgOpenLevel
             // 
             this.dgOpenLevel.Filter = "SuperTux Levels (*.stl)|*.stl";
@@ -575,6 +660,14 @@ namespace Cobble {
             // 
             this.dgSaveLevel.DefaultExt = "stl";
             this.dgSaveLevel.Filter = "SuperTux Levels (*.stl)|*.stl";
+            // 
+            // dgOpenBrush
+            // 
+            this.dgOpenBrush.Filter = "SuperTux Brushes (*.csv)|*.csv";
+            // 
+            // dgSaveBrush
+            // 
+            this.dgSaveBrush.Filter = "SuperTux Brushes (*.csv)|*.csv";
             // 
             // Form1
             // 
@@ -587,7 +680,7 @@ namespace Cobble {
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Cobble";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -607,6 +700,8 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.pbTiles)).EndInit();
             this.tpTileManip.ResumeLayout(false);
             this.tpObjects.ResumeLayout(false);
+            this.tpBrushes.ResumeLayout(false);
+            this.tpBrushes.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -668,6 +763,15 @@ namespace Cobble {
         private System.Windows.Forms.ToolStripStatusLabel slQuickHelp;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnModeBrushes;
+        private System.Windows.Forms.TabPage tpBrushes;
+        private System.Windows.Forms.OpenFileDialog dgOpenBrush;
+        private System.Windows.Forms.SaveFileDialog dgSaveBrush;
+        private System.Windows.Forms.Button btnSaveBrush;
+        private System.Windows.Forms.Button btnLoadBrush;
+        private System.Windows.Forms.Button btnNewBrush;
+        private System.Windows.Forms.Label laBrushSize;
+        private System.Windows.Forms.Button btnBrushLearnTM;
 
     }
 }
