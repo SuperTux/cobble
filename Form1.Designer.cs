@@ -62,14 +62,14 @@ namespace Cobble {
             this.cbTilegroup = new System.Windows.Forms.ComboBox();
             this.tpTileManip = new System.Windows.Forms.TabPage();
             this.btnDuplicateSelection = new System.Windows.Forms.Button();
-            this.tpObjects = new System.Windows.Forms.TabPage();
-            this.lbGameObjects = new System.Windows.Forms.ListBox();
             this.tpBrushes = new System.Windows.Forms.TabPage();
             this.btnBrushLearnTM = new System.Windows.Forms.Button();
             this.laBrushSize = new System.Windows.Forms.Label();
             this.btnNewBrush = new System.Windows.Forms.Button();
             this.btnSaveBrush = new System.Windows.Forms.Button();
             this.btnLoadBrush = new System.Windows.Forms.Button();
+            this.tpObjects = new System.Windows.Forms.TabPage();
+            this.lbGameObjects = new System.Windows.Forms.ListBox();
             this.tpGameObjectManip = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -78,9 +78,9 @@ namespace Cobble {
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnModeTileAdd = new System.Windows.Forms.ToolStripButton();
             this.btnModeTileMove = new System.Windows.Forms.ToolStripButton();
+            this.btnModeBrushes = new System.Windows.Forms.ToolStripButton();
             this.btnModeObjAdd = new System.Windows.Forms.ToolStripButton();
             this.btnModeObjMove = new System.Windows.Forms.ToolStripButton();
-            this.btnModeBrushes = new System.Windows.Forms.ToolStripButton();
             this.dgOpenLevel = new System.Windows.Forms.OpenFileDialog();
             this.dgSaveLevel = new System.Windows.Forms.SaveFileDialog();
             this.dgOpenBrush = new System.Windows.Forms.OpenFileDialog();
@@ -101,8 +101,8 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.pbTileBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTiles)).BeginInit();
             this.tpTileManip.SuspendLayout();
-            this.tpObjects.SuspendLayout();
             this.tpBrushes.SuspendLayout();
+            this.tpObjects.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -263,8 +263,8 @@ namespace Cobble {
             // resizeTilemapsToolStripMenuItem
             // 
             this.resizeTilemapsToolStripMenuItem.Name = "resizeTilemapsToolStripMenuItem";
-            this.resizeTilemapsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.resizeTilemapsToolStripMenuItem.Text = "&Resize Tilemaps...";
+            this.resizeTilemapsToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.resizeTilemapsToolStripMenuItem.Text = "Offset and &Resize Tilemaps...";
             this.resizeTilemapsToolStripMenuItem.Click += new System.EventHandler(this.resizeTilemapsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -468,26 +468,6 @@ namespace Cobble {
             this.btnDuplicateSelection.UseVisualStyleBackColor = true;
             this.btnDuplicateSelection.Click += new System.EventHandler(this.btnDuplicateSelection_Click);
             // 
-            // tpObjects
-            // 
-            this.tpObjects.Controls.Add(this.lbGameObjects);
-            this.tpObjects.Location = new System.Drawing.Point(4, 23);
-            this.tpObjects.Name = "tpObjects";
-            this.tpObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tpObjects.Size = new System.Drawing.Size(157, 406);
-            this.tpObjects.TabIndex = 2;
-            this.tpObjects.Text = "OA";
-            this.tpObjects.UseVisualStyleBackColor = true;
-            // 
-            // lbGameObjects
-            // 
-            this.lbGameObjects.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbGameObjects.FormattingEnabled = true;
-            this.lbGameObjects.Location = new System.Drawing.Point(3, 3);
-            this.lbGameObjects.Name = "lbGameObjects";
-            this.lbGameObjects.Size = new System.Drawing.Size(151, 394);
-            this.lbGameObjects.TabIndex = 0;
-            // 
             // tpBrushes
             // 
             this.tpBrushes.Controls.Add(this.btnBrushLearnTM);
@@ -550,6 +530,26 @@ namespace Cobble {
             this.btnLoadBrush.Text = "load...";
             this.btnLoadBrush.UseVisualStyleBackColor = true;
             this.btnLoadBrush.Click += new System.EventHandler(this.btnLoadBrush_Click);
+            // 
+            // tpObjects
+            // 
+            this.tpObjects.Controls.Add(this.lbGameObjects);
+            this.tpObjects.Location = new System.Drawing.Point(4, 23);
+            this.tpObjects.Name = "tpObjects";
+            this.tpObjects.Padding = new System.Windows.Forms.Padding(3);
+            this.tpObjects.Size = new System.Drawing.Size(157, 406);
+            this.tpObjects.TabIndex = 2;
+            this.tpObjects.Text = "OA";
+            this.tpObjects.UseVisualStyleBackColor = true;
+            // 
+            // lbGameObjects
+            // 
+            this.lbGameObjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbGameObjects.FormattingEnabled = true;
+            this.lbGameObjects.Location = new System.Drawing.Point(3, 3);
+            this.lbGameObjects.Name = "lbGameObjects";
+            this.lbGameObjects.Size = new System.Drawing.Size(151, 394);
+            this.lbGameObjects.TabIndex = 0;
             // 
             // tpGameObjectManip
             // 
@@ -622,6 +622,16 @@ namespace Cobble {
             this.btnModeTileMove.Text = "Manipulate Tiles";
             this.btnModeTileMove.Click += new System.EventHandler(this.btnModeTileMove_Click);
             // 
+            // btnModeBrushes
+            // 
+            this.btnModeBrushes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModeBrushes.Image = ((System.Drawing.Image)(resources.GetObject("btnModeBrushes.Image")));
+            this.btnModeBrushes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModeBrushes.Name = "btnModeBrushes";
+            this.btnModeBrushes.Size = new System.Drawing.Size(23, 22);
+            this.btnModeBrushes.Text = "Brushes";
+            this.btnModeBrushes.Click += new System.EventHandler(this.btnModeBrushes_Click);
+            // 
             // btnModeObjAdd
             // 
             this.btnModeObjAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -641,16 +651,6 @@ namespace Cobble {
             this.btnModeObjMove.Size = new System.Drawing.Size(23, 22);
             this.btnModeObjMove.Text = "Manipulate Objects";
             this.btnModeObjMove.Click += new System.EventHandler(this.btnModeObjMove_Click);
-            // 
-            // btnModeBrushes
-            // 
-            this.btnModeBrushes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnModeBrushes.Image = ((System.Drawing.Image)(resources.GetObject("btnModeBrushes.Image")));
-            this.btnModeBrushes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModeBrushes.Name = "btnModeBrushes";
-            this.btnModeBrushes.Size = new System.Drawing.Size(23, 22);
-            this.btnModeBrushes.Text = "Brushes";
-            this.btnModeBrushes.Click += new System.EventHandler(this.btnModeBrushes_Click);
             // 
             // dgOpenLevel
             // 
@@ -699,9 +699,9 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.pbTileBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTiles)).EndInit();
             this.tpTileManip.ResumeLayout(false);
-            this.tpObjects.ResumeLayout(false);
             this.tpBrushes.ResumeLayout(false);
             this.tpBrushes.PerformLayout();
+            this.tpObjects.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

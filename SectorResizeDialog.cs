@@ -30,8 +30,22 @@ namespace Cobble {
     public partial class SectorResizeDialog : Form {
         public SectorResizeDialog(int currentWidth, int currentHeight) {
             InitializeComponent();
+            udOffsetX.Value = 0;
+            udOffsetY.Value = 0;
             udWidth.Value = currentWidth;
             udHeight.Value = currentHeight;
+        }
+
+        public int OffsetX {
+            get {
+                return (int)udOffsetX.Value;
+            }
+        }
+
+        public int OffsetY {
+            get {
+                return (int)udOffsetY.Value;
+            }
         }
 
         public int SectorWidth {

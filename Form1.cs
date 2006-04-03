@@ -515,7 +515,14 @@ namespace Cobble {
 
             if (srd.ShowDialog() == DialogResult.OK) {
                 foreach (Tilemap tilemap in currentSector.tilemaps) {
+                    tilemap.OffsetBy(srd.OffsetX, srd.OffsetY);
                     tilemap.ResizeTo(srd.SectorWidth, srd.SectorHeight);
+                }
+                foreach (GameObject go in currentSector.gameObjects) {
+                    if (!(go is SpatialGameObject)) continue;
+                    SpatialGameObject sgo = (SpatialGameObject)go;
+                    sgo.X += 32*srd.OffsetX;
+                    sgo.Y += 32*srd.OffsetY;
                 }
                 cbSector_SelectedIndexChanged(sender, e);
             }

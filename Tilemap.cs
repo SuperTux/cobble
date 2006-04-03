@@ -119,6 +119,17 @@ namespace Cobble {
             tiles[(width * py) + px] = id;
         }
 
+        public void OffsetBy(int offsetX, int offsetY) {
+            List<int> newTiles = new List<int>();
+            for (int i = 0; i < width * height; i++) newTiles.Add(0);
+            for (int ty = 0; ty < height; ty++) {
+                for (int tx = 0; tx < width; tx++) {
+                    newTiles[(width * ty) + tx] = getTileAt((tx+2*width-offsetX)%width, (ty+2*height-offsetY)%height);
+                }
+            }
+            this.tiles = newTiles;
+        }
+
         public void ResizeTo(int newWidth, int newHeight) {
             List<int> newTiles = new List<int>();
             for (int i = 0; i < newWidth * newHeight; i++) newTiles.Add(0);
