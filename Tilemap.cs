@@ -25,7 +25,7 @@ using Lisp;
 
 namespace Cobble {
     public class Tilemap {
-        public string layer;
+        public int layer;
         public bool solid;
         public float speed;
         public int width;
@@ -42,7 +42,7 @@ namespace Cobble {
                     parser.Parse();
                     switch (symbol) {
                         case "layer":
-                            this.layer = parser.StringValue;
+                            this.layer = parser.IntegerValue;
                             break;
                         case "solid":
                             this.solid = parser.BoolValue;
@@ -66,7 +66,7 @@ namespace Cobble {
             }
         }
 
-        public Tilemap(string layer, bool solid, int width, int height) {
+        public Tilemap(int layer, bool solid, int width, int height) {
             this.layer = layer;
             this.solid = solid;
             this.speed = 1.0F;
@@ -88,7 +88,17 @@ namespace Cobble {
         }
 
         public override string ToString() {
-            return this.layer;
+        	switch (this.layer)
+        	{
+        		case -100:
+        			return "Background";
+        		case 0:
+        			return "Interactive";
+        		case 100:
+        			return "Foreground";
+        		default:
+        			return "Layer " + this.layer.ToString();
+        	}
         }
 
         private void ParseTiles(Parser parser) {

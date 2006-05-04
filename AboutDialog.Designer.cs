@@ -45,7 +45,7 @@ namespace Cobble {
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Copyright (c) 2006 Christoph Sommer";
+            this.label2.Text = "Copyright \xA9 2006 Christoph Sommer";
             // 
             // button1
             // 
@@ -75,8 +75,11 @@ namespace Cobble {
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
             this.Name = "AboutDialog";
-            this.Text = "AboutDialog";
+            this.Text = "About Cobble";
             this.ResumeLayout(false);
             this.PerformLayout();
 

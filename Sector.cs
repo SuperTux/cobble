@@ -76,9 +76,9 @@ namespace Cobble {
             this.music = "music/chipdisko.ogg";
             this.gravity = 10.0F;
             this.tilemaps = new List<Tilemap>();
-            this.tilemaps.Add(new Tilemap("background", false, 310, 19));
-            this.tilemaps.Add(new Tilemap("interactive", true, 310, 19));
-            this.tilemaps.Add(new Tilemap("foreground", false, 310, 19));
+            this.tilemaps.Add(new Tilemap(-100, false, 310, 19));
+            this.tilemaps.Add(new Tilemap(0, true, 310, 19));
+            this.tilemaps.Add(new Tilemap(100, false, 310, 19));
             this.background = new Background("images/background/arctis.jpg", 0.5F);
             this.gameObjects = new List<GameObject>();
             this.gameObjects.Add(new Spawnpoint("main", 100, 100));
@@ -93,6 +93,9 @@ namespace Cobble {
                 tilemap.Write(writer);
             }
             background.Write(writer);
+            writer.StartList("camera");
+            writer.Write("mode", "normal");
+            writer.EndList("camera");
             foreach (GameObject gameObject in this.gameObjects) {
                 gameObject.Write(writer);
             }

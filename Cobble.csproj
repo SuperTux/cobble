@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EBB3DB0D-657E-494E-956F-C6CEFF76566B}</ProjectGuid>
-    <StartWorkingDirectory>..\..\..\Games\supertux-svn\</StartWorkingDirectory>
+    <StartWorkingDirectory>..\SuperTux\Trunk\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>

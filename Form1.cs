@@ -418,6 +418,10 @@ namespace Cobble {
         }
 
         private void onLevelChanged() {
+        	sectorToolStripMenuItem.Enabled = true;
+			propertiesToolStripMenuItem.Enabled = true;
+			saveToolStripMenuItem.Enabled = true;
+        	saveasToolStripMenuItem.Enabled = true;
             cbSector.Items.Clear();
             foreach (Sector sector in level.sectors) {
                 cbSector.Items.Add(sector);

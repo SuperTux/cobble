@@ -211,6 +211,7 @@ namespace Cobble {
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
@@ -219,6 +220,7 @@ namespace Cobble {
             // 
             // saveasToolStripMenuItem
             // 
+            this.saveasToolStripMenuItem.Enabled = false;
             this.saveasToolStripMenuItem.Name = "saveasToolStripMenuItem";
             this.saveasToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
                         | System.Windows.Forms.Keys.S)));
@@ -233,6 +235,7 @@ namespace Cobble {
             // 
             // propertiesToolStripMenuItem
             // 
+            this.propertiesToolStripMenuItem.Enabled = false;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             this.propertiesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
                         | System.Windows.Forms.Keys.P)));
@@ -256,6 +259,7 @@ namespace Cobble {
             // 
             this.sectorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resizeTilemapsToolStripMenuItem});
+            this.sectorToolStripMenuItem.Enabled = false;
             this.sectorToolStripMenuItem.Name = "sectorToolStripMenuItem";
             this.sectorToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.sectorToolStripMenuItem.Text = "&Sector";

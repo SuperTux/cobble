@@ -190,6 +190,9 @@ namespace Cobble {
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SectorResizeDialog";
             this.Text = "Sector Manipulation";
             ((System.ComponentModel.ISupportInitialize)(this.udWidth)).EndInit();
