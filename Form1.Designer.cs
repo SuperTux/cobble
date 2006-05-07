@@ -28,6 +28,9 @@ namespace Cobble {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.slCoordinates = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.slTileId = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.slQuickHelp = new System.Windows.Forms.ToolStripStatusLabel();
@@ -44,6 +47,7 @@ namespace Cobble {
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sectorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resizeTilemapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchAndReplaceTilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -119,6 +123,9 @@ namespace Cobble {
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.slCoordinates,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel5,
+            this.slTileId,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.slQuickHelp});
@@ -139,6 +146,24 @@ namespace Cobble {
             this.slCoordinates.Name = "slCoordinates";
             this.slCoordinates.Size = new System.Drawing.Size(26, 17);
             this.slCoordinates.Text = "0,0";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(14, 17);
+            this.toolStripStatusLabel4.Text = "|";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(53, 17);
+            this.toolStripStatusLabel5.Text = "Tile Id: ";
+            // 
+            // slTileId
+            // 
+            this.slTileId.Name = "slTileId";
+            this.slTileId.Size = new System.Drawing.Size(15, 17);
+            this.slTileId.Text = "0";
             // 
             // toolStripStatusLabel2
             // 
@@ -258,7 +283,8 @@ namespace Cobble {
             // sectorToolStripMenuItem
             // 
             this.sectorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resizeTilemapsToolStripMenuItem});
+            this.resizeTilemapsToolStripMenuItem,
+            this.searchAndReplaceTilesToolStripMenuItem});
             this.sectorToolStripMenuItem.Enabled = false;
             this.sectorToolStripMenuItem.Name = "sectorToolStripMenuItem";
             this.sectorToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
@@ -267,9 +293,17 @@ namespace Cobble {
             // resizeTilemapsToolStripMenuItem
             // 
             this.resizeTilemapsToolStripMenuItem.Name = "resizeTilemapsToolStripMenuItem";
-            this.resizeTilemapsToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
+            this.resizeTilemapsToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
             this.resizeTilemapsToolStripMenuItem.Text = "Offset and &Resize Tilemaps...";
             this.resizeTilemapsToolStripMenuItem.Click += new System.EventHandler(this.resizeTilemapsToolStripMenuItem_Click);
+            // 
+            // searchAndReplaceTilesToolStripMenuItem
+            // 
+            this.searchAndReplaceTilesToolStripMenuItem.Name = "searchAndReplaceTilesToolStripMenuItem";
+            this.searchAndReplaceTilesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.searchAndReplaceTilesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
+            this.searchAndReplaceTilesToolStripMenuItem.Text = "&Search and Replace Tiles...";
+            this.searchAndReplaceTilesToolStripMenuItem.Click += new System.EventHandler(this.searchAndReplaceTilesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -776,6 +810,10 @@ namespace Cobble {
         private System.Windows.Forms.Button btnNewBrush;
         private System.Windows.Forms.Label laBrushSize;
         private System.Windows.Forms.Button btnBrushLearnTM;
+        private System.Windows.Forms.ToolStripMenuItem searchAndReplaceTilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel slTileId;
 
     }
 }

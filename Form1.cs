@@ -257,6 +257,7 @@ namespace Cobble {
             int tx = e.X / 32;
             int ty = e.Y / 32;
             slCoordinates.Text = tx + "," + ty;
+            slTileId.Text = currentTilemap.getTileAt(tx, ty).ToString();
             if (currentCanvasAction == CanvasAction.drawingTiles) {
                 if (ModifierKeys == Keys.Shift) {
                     currentTilemap.setTileAt(tx, ty, 0);
@@ -498,6 +499,7 @@ namespace Cobble {
             anchorFloatingTilemap();
             currentSelection.Width = 0;
             pbCanvas.Invalidate();
+            updateToolButtons();
         }
 
         private void btnDuplicateSelection_Click(object sender, EventArgs e) {
@@ -532,42 +534,35 @@ namespace Cobble {
             }
         }
 
+        private void updateToolButtons() {
+            btnModeTileAdd.Checked = (tcToolSettings.SelectedTab == tpTiles);
+            btnModeTileMove.Checked = (tcToolSettings.SelectedTab == tpTileManip);
+            btnModeObjAdd.Checked = (tcToolSettings.SelectedTab == tpObjects);
+            btnModeObjMove.Checked = (tcToolSettings.SelectedTab == tpGameObjectManip);
+            btnModeBrushes.Checked = (tcToolSettings.SelectedTab == tpBrushes);
+        }
+
         private void btnModeTileAdd_Click(object sender, EventArgs e) {
-            btnModeTileAdd.Checked = true;
-            btnModeTileMove.Checked = false;
-            btnModeObjAdd.Checked = false;
-            btnModeObjMove.Checked = false;
             tcToolSettings.SelectedTab = tpTiles;
+            updateToolButtons();
             slQuickHelp.Text = "LMB adds selected tile, Shift+LMB removes tiles";
         }
 
         private void btnModeTileMove_Click(object sender, EventArgs e) {
-            btnModeTileAdd.Checked = false;
-            btnModeTileMove.Checked = true;
-            btnModeObjAdd.Checked = false;
-            btnModeObjMove.Checked = false;
-            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpTileManip;
+            updateToolButtons();
             slQuickHelp.Text = "LMB-drag to select and move tiles";
         }
 
         private void btnModeObjAdd_Click(object sender, EventArgs e) {
-            btnModeTileAdd.Checked = false;
-            btnModeTileMove.Checked = false;
-            btnModeObjAdd.Checked = true;
-            btnModeObjMove.Checked = false;
-            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpObjects;
+            updateToolButtons();
             slQuickHelp.Text = "LMB adds selected object";
         }
 
         private void btnModeObjMove_Click(object sender, EventArgs e) {
-            btnModeTileAdd.Checked = false;
-            btnModeTileMove.Checked = false;
-            btnModeObjAdd.Checked = false;
-            btnModeObjMove.Checked = true;
-            btnModeBrushes.Checked = false;
             tcToolSettings.SelectedTab = tpGameObjectManip;
+            updateToolButtons();
             slQuickHelp.Text = "LMB-drag to move objects, Shift+LMB to delete objects";
         }
 
@@ -577,12 +572,8 @@ namespace Cobble {
         }
 
         private void btnModeBrushes_Click(object sender, EventArgs e) {
-            btnModeTileAdd.Checked = false;
-            btnModeTileMove.Checked = false;
-            btnModeObjAdd.Checked = false;
-            btnModeObjMove.Checked = false;
-            btnModeBrushes.Checked = true;
             tcToolSettings.SelectedTab = tpBrushes;
+            updateToolButtons();
             slQuickHelp.Text = "LMB to draw with loaded brush, Shift+LMB to delete tiles, Ctrl+LMB to learn pattern, Ctrl+Shift+LMB to forget pattern";
         }
 
@@ -612,6 +603,27 @@ namespace Cobble {
             if (currentTilemap == null) return;
             currentBrush.learn(currentTilemap);
             laBrushSize.Text = currentBrush.Length + " Patterns";
+        }
+
+        private void searchAndReplaceTilesToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (currentSector == null) return;
+            int oldId;
+            try {
+                oldId = int.Parse(slTileId.Text);
+            } 
+            catch(Exception) {
+                oldId = 0;
+            }
+            int newId = currentTileId;
+
+            TileSearchDialog tsd = new TileSearchDialog(oldId, newId);
+
+            if (tsd.ShowDialog() == DialogResult.OK) {
+                foreach (Tilemap tilemap in currentSector.tilemaps) {
+                    tilemap.Replace(tsd.OldId, tsd.NewId);
+                }
+                cbSector_SelectedIndexChanged(sender, e);
+            }
         }
     }
 }

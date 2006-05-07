@@ -41,7 +41,7 @@ namespace Cobble {
                     string symbol = parser.SymbolValue;
                     parser.Parse();
                     switch (symbol) {
-                        case "layer":
+                        case "z-pos":
                             this.layer = parser.IntegerValue;
                             break;
                         case "solid":
@@ -91,11 +91,11 @@ namespace Cobble {
         	switch (this.layer)
         	{
         		case -100:
-        			return "Background";
+        			return "Background (-100)";
         		case 0:
-        			return "Interactive";
+        			return "Interactive (0)";
         		case 100:
-        			return "Foreground";
+        			return "Foreground (100)";
         		default:
         			return "Layer " + this.layer.ToString();
         	}
@@ -151,6 +151,14 @@ namespace Cobble {
             this.width = newWidth;
             this.height = newHeight;
             this.tiles = newTiles;
+        }
+
+        public void Replace(int oldId, int newId) {
+            for (int ty = 0; ty < height; ty++) {
+                for (int tx = 0; tx < width; tx++) {
+                    if (getTileAt(tx, ty) == oldId) setTileAt(tx, ty, newId);
+                }
+            }            
         }
     }
 }
