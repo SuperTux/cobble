@@ -1,5 +1,5 @@
 //  $Id: foo.cpp 2979 2006-01-10 00:00:04Z sommer $
-// 
+//
 //  Cobble - A simple SuperTux level editor
 //  Copyright (C) 2006 Christoph Sommer <supertux@2006.expires.deltadevelopment.de>
 //
@@ -12,7 +12,7 @@
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //  GNU General Public License for more details.
-// 
+//
 //  You should have received a copy of the GNU General Public License
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
@@ -81,7 +81,7 @@ namespace Cobble {
             Close();
         }
 
-        
+
         private void pbCanvas_Paint(object sender, PaintEventArgs e) {
             Graphics gr = e.Graphics;
 
@@ -360,7 +360,7 @@ namespace Cobble {
                 gr.DrawImageUnscaled(pbTileBackground.Image, px, py);
                 gr.DrawImageUnscaled(tile, px, py);
 
-                tx += 1; if (tx >= tilesPerRow) { tx = 0; ty += 1; }                
+                tx += 1; if (tx >= tilesPerRow) { tx = 0; ty += 1; }
             }
 
             if ((currentTilePx >= 0) && (currentTilePy >= 0)) {
@@ -610,7 +610,7 @@ namespace Cobble {
             int oldId;
             try {
                 oldId = int.Parse(slTileId.Text);
-            } 
+            }
             catch(Exception) {
                 oldId = 0;
             }

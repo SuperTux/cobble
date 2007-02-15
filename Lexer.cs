@@ -17,7 +17,7 @@ public class Lexer {
 
     public class EOFException : Exception {
     };
-        
+
     public enum TokenType {
         EOF,
         OPEN_PAREN,
@@ -103,7 +103,7 @@ public class Lexer {
                     if(TokenString == "f")
                         return TokenType.FALSE;
 
-                    throw new Exception("Unknown constant '" 
+                    throw new Exception("Unknown constant '"
                             + TokenString + "'");
                 default:
                     if(Char.IsDigit(c) || c == '-') {
@@ -123,7 +123,7 @@ public class Lexer {
                             NextChar();
                         } while(!Char.IsWhiteSpace(c) && c != '\"' && c != '('
                                 && c != ')' && c != ';');
-                        
+
                         if(have_nondigits || !have_digits
                                 || have_floating_point > 1)
                             return TokenType.SYMBOL;
@@ -137,7 +137,7 @@ public class Lexer {
                             NextChar();
                         } while(!Char.IsWhiteSpace(c) && c != '\"' && c != '('
                                 && c != ')' && c != ';');
-                        
+
                         return TokenType.SYMBOL;
                     }
             }

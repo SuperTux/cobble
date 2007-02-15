@@ -61,7 +61,7 @@ public class Tile {
         } else {
             Console.WriteLine("no images on tile " + ID);
         }
-        
+
         if(Solid)
             writer.Write("solid", true);
         if(UniSolid)
@@ -211,7 +211,7 @@ public class Tile {
             throw new Exception("expected integer");
         region.Region.Width = parser.IntegerValue;
 
-        parser.Parse();                                    
+        parser.Parse();
         if(parser.Type != Parser.LispType.INTEGER)
             throw new Exception("expected integer");
         region.Region.Height = parser.IntegerValue;
@@ -221,4 +221,3 @@ public class Tile {
             throw new Exception("expected END_LIST");
     }
 }
-

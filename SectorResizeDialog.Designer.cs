@@ -40,9 +40,9 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.udOffsetY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.udOffsetX)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // btnOk
-            // 
+            //
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(254, 174);
             this.btnOk.Name = "btnOk";
@@ -50,9 +50,9 @@ namespace Cobble {
             this.btnOk.TabIndex = 0;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
-            // 
+            //
             // btnCancel
-            // 
+            //
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(173, 174);
             this.btnCancel.Name = "btnCancel";
@@ -60,9 +60,9 @@ namespace Cobble {
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
+            //
             // udWidth
-            // 
+            //
             this.udWidth.Location = new System.Drawing.Point(24, 33);
             this.udWidth.Maximum = new decimal(new int[] {
             1000,
@@ -82,9 +82,9 @@ namespace Cobble {
             0,
             0,
             0});
-            // 
+            //
             // udHeight
-            // 
+            //
             this.udHeight.Location = new System.Drawing.Point(168, 33);
             this.udHeight.Maximum = new decimal(new int[] {
             1000,
@@ -104,18 +104,18 @@ namespace Cobble {
             0,
             0,
             0});
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(150, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "x";
-            // 
+            //
             // groupBox1
-            // 
+            //
             this.groupBox1.Controls.Add(this.udHeight);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.udWidth);
@@ -125,9 +125,9 @@ namespace Cobble {
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resize To";
-            // 
+            //
             // groupBox2
-            // 
+            //
             this.groupBox2.Controls.Add(this.udOffsetY);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.udOffsetX);
@@ -137,9 +137,9 @@ namespace Cobble {
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Offset By";
-            // 
+            //
             // udOffsetY
-            // 
+            //
             this.udOffsetY.Location = new System.Drawing.Point(168, 33);
             this.udOffsetY.Maximum = new decimal(new int[] {
             512,
@@ -154,18 +154,18 @@ namespace Cobble {
             this.udOffsetY.Name = "udOffsetY";
             this.udOffsetY.Size = new System.Drawing.Size(120, 20);
             this.udOffsetY.TabIndex = 3;
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(150, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(10, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = ",";
-            // 
+            //
             // udOffsetX
-            // 
+            //
             this.udOffsetX.Location = new System.Drawing.Point(24, 33);
             this.udOffsetX.Maximum = new decimal(new int[] {
             512,
@@ -180,9 +180,9 @@ namespace Cobble {
             this.udOffsetX.Name = "udOffsetX";
             this.udOffsetX.Size = new System.Drawing.Size(120, 20);
             this.udOffsetX.TabIndex = 2;
-            // 
+            //
             // SectorResizeDialog
-            // 
+            //
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

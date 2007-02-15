@@ -33,9 +33,9 @@ namespace Cobble {
             ((System.ComponentModel.ISupportInitialize)(this.udNewId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.udOldId)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // btnOk
-            // 
+            //
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(254, 105);
             this.btnOk.Name = "btnOk";
@@ -43,9 +43,9 @@ namespace Cobble {
             this.btnOk.TabIndex = 0;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
-            // 
+            //
             // btnCancel
-            // 
+            //
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(173, 105);
             this.btnCancel.Name = "btnCancel";
@@ -53,9 +53,9 @@ namespace Cobble {
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
+            //
             // groupBox2
-            // 
+            //
             this.groupBox2.Controls.Add(this.udNewId);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.udOldId);
@@ -65,9 +65,9 @@ namespace Cobble {
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Replace Tile Ids";
-            // 
+            //
             // udNewId
-            // 
+            //
             this.udNewId.Location = new System.Drawing.Point(168, 33);
             this.udNewId.Maximum = new decimal(new int[] {
             65535,
@@ -77,18 +77,18 @@ namespace Cobble {
             this.udNewId.Name = "udNewId";
             this.udNewId.Size = new System.Drawing.Size(120, 20);
             this.udNewId.TabIndex = 3;
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(150, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "->";
-            // 
+            //
             // udOldId
-            // 
+            //
             this.udOldId.Location = new System.Drawing.Point(24, 33);
             this.udOldId.Maximum = new decimal(new int[] {
             65535,
@@ -98,9 +98,9 @@ namespace Cobble {
             this.udOldId.Name = "udOldId";
             this.udOldId.Size = new System.Drawing.Size(120, 20);
             this.udOldId.TabIndex = 2;
-            // 
+            //
             // TileSearchDialog
-            // 
+            //
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

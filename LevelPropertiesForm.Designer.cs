@@ -31,9 +31,9 @@ namespace Cobble {
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // tableLayoutPanel1
-            // 
+            //
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -48,9 +48,9 @@ namespace Cobble {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(225, 54);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
@@ -59,9 +59,9 @@ namespace Cobble {
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 27);
@@ -70,25 +70,25 @@ namespace Cobble {
             this.label2.TabIndex = 1;
             this.label2.Text = "Author:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
+            //
             // tbName
-            // 
+            //
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbName.Location = new System.Drawing.Point(67, 3);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(155, 20);
             this.tbName.TabIndex = 2;
-            // 
+            //
             // tbAuthor
-            // 
+            //
             this.tbAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbAuthor.Location = new System.Drawing.Point(67, 30);
             this.tbAuthor.Name = "tbAuthor";
             this.tbAuthor.Size = new System.Drawing.Size(155, 20);
             this.tbAuthor.TabIndex = 3;
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(158, 82);
             this.button1.Name = "button1";
@@ -97,9 +97,9 @@ namespace Cobble {
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // LevelPropertiesForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 117);
